@@ -1,0 +1,29 @@
+.main_header{
+    width: 100%;
+    height: 600px;
+    border: 1px solid black;
+    background-image: url(../../assets/gbo-WyXuSQMDt1c-unsplash.jpg);
+    background-size: cover;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @mixin header_text ($fontSize) {
+        margin: 0;
+        font-size: $fontSize;
+        opacity: 0;
+    }
+
+    .name{
+        @include header_text(84px);
+        transform: translate(-50%);
+    }
+
+    .pos{
+        @include header_text(42px);
+        transform: translate(100%);
+    }
+}
+
