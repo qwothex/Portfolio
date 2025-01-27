@@ -1,29 +1,30 @@
 .main_header{
     width: 100%;
-    height: 600px;
+    height: 100vh;
     border: 1px solid black;
-    background-image: url(../../assets/gbo-WyXuSQMDt1c-unsplash.jpg);
-    background-size: cover;
+    background: transparent;
     color: #f3f3f3;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    @mixin header_text ($fontSize) {
+    @mixin header_text ($fontSizeMin, $fontSizeP, $fontSizeMax) {
         margin: 0;
-        font-size: $fontSize;
         opacity: 0;
+        font-size: clamp($fontSizeMin, $fontSizeP, $fontSizeMax);
     }
 
     .name{
-        @include header_text(84px);
-        transform: translate(-50%);
+        @include header_text(36px, 10vw, 100px); //84
     }
 
     .pos{
-        @include header_text(42px);
-        transform: translate(100%);
+        @include header_text(24px, 5vw, 40px);
+    }
+
+    @media (max-width: 600px) {
+        height: 400px;
     }
 }
 

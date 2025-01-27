@@ -1,0 +1,41 @@
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+
+    h1{
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .logo{
+        height: 80px;
+        background-image: url(../../assets//images/logo.webp);
+        background-size: 135px;
+        background-repeat: no-repeat;
+        background-position: top;
+        border-bottom: 4px solid white;
+    }
+
+    .icons_container{
+        align-self: center;
+        height: 35px;
+        width: 125px;
+        padding: 5px 5px;
+        border-radius: 12px;
+        background-color: #f3f3f3;
+
+        img{
+            margin-left: 5px;
+        }
+    }
+
+    p{
+        text-align: center;
+    }
+}
