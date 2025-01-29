@@ -1,9 +1,4 @@
 
-@font-face {
-  font-family: 'Radley';
-  src: url('https://fonts.googleapis.com/css2?family=Radley&display=swap');
-}
-
 :root {
 
   background-image: url('./src/assets/images/bg.jpg');
@@ -23,15 +18,9 @@
 html{
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-family: 'Radley', sans-serif;
+  font-family: 'Radley', serif;
 }
 
 body{
   margin: 0;
-}
-
-textarea{
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }

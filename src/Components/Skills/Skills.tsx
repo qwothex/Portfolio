@@ -9,9 +9,9 @@ gsap.registerPlugin(useGSAP)
 const Skills:FC = () => {
 
     return(
-        <div className={s.skills_container} >
+        <div id='skills' className={s.skills_container} >
             <div className={s.skills_content}>
-                <h1 id='skills'>Skills</h1>
+                <h1>Skills</h1>
                 <h3>What am i proficient in</h3>
                 <SkillTiles />
             </div>

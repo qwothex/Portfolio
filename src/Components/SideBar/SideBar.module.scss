@@ -1,6 +1,11 @@
 
-.container{
-    position: fixed;
+// $bgc: gainsboro;
+$bgc: #000;
+$fontC: #fff;
+
+
+.sideBar_container{
+    position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
@@ -9,28 +14,92 @@
     background-color: #3333335c;
     border: 2px solid #fff;
     border-radius: 10px;
-    z-index: 999;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li{
+        font-size: 16px;
+        text-align: center;
+
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+.navBar_container{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    width: 80%;
+    height: 50px;
+    transform: translate(100%);
+    background-color: $bgc;
+    z-index: 101;
+    overflow: hidden;
+    border: 1px solid white;
 
     ul{
-        width: 100%;
         height: 100%;
         display: flex;
-        flex-direction: column;
         justify-content: space-evenly;
-        padding: 0;
+        align-items: center;
         margin: 0;
+        padding: 0;
         list-style-type: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
 
         li{
-            font-size: 16px;
-            text-align: center;
+            width: 80px;
+            height: 35px;
+            transition: .3s;
+            border: 2px solid;
+            border-color: transparent;
+            padding: 1px;
+            position: relative;
 
             a{
-                color: #fff;
+                position: inherit;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                place-items: center;
+                color: $fontC;
                 text-decoration: none;
+                z-index: 99;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                left: -3px;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: calc(100% + 6px);
+                height: 80%;
+                background-color: $bgc;
+                z-index: 5;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: 50%;
+                transform: translate(-50%);
+                width: 80%;
+                height: calc(100% + 4px);
+                background-color: $bgc;
+                z-index: 5;
+            }
+
+            &:hover{
+                border-color: $fontC;
             }
         }
     }

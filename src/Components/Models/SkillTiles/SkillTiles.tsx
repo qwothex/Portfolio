@@ -30,7 +30,6 @@ const Tile:FC = () => {
                 x: 3,
                 y: 3,
             }),
-            console.log(`.${s.container}`)
             gsap.from(el.position, {
                 scrollTrigger: {
                     trigger: `.${s.container}`,
@@ -57,7 +56,7 @@ camera.updateProjectionMatrix(); // Apply zoom changes
 // Renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.setSize(refElement.current!.offsetWidth, refElement.current!.offsetHeight); //refElement.current!.offsetWidth, refElement.current!.offsetHeight
+renderer.setSize(refElement.current!.offsetWidth, refElement.current!.offsetHeight);
 refElement.current && refElement.current.appendChild(renderer.domElement);
 
 const light1 = new THREE.DirectionalLight(0xffffff, 1);
