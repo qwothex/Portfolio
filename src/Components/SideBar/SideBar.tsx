@@ -12,15 +12,19 @@ const SideBar:FC = () => {
     const containerRef = useRef(null)
 
     useGSAP(() => {
-        gsap.to(`.${s.navBar_container}`, {
+        gsap.fromTo(`.${s.navBar_container}`, 
+            {
+                xPercent: 100
+            },
+            {
             scrollTrigger: {
                 trigger: `.${s.sideBar_container}`,
-                scrub: true,
+                scrub: 1,
                 start: 'top 40%',
-                // markers: true
             },
-        xPercent: -150,
-        })
+            xPercent: -50
+            }
+        )
     }, {scope: containerRef})
 
     return(

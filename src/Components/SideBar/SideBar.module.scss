@@ -39,11 +39,11 @@ $fontC: #fff;
     left: 50%;
     width: 80%;
     height: 50px;
-    transform: translate(100%);
     background-color: $bgc;
     z-index: 101;
     overflow: hidden;
     border: 1px solid white;
+    will-change: transform;
 
     ul{
         height: 100%;

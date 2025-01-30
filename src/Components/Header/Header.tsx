@@ -8,54 +8,40 @@ gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(ScrollTrigger)
 
 const Header:FC = () => {
-    const container = useRef(null)
+    const containerRef = useRef(null)
+    const nameRef = useRef(null)
+    const posRef = useRef(null)
 
-    useGSAP(() => { 
-        const tl = gsap.timeline()
-        const tl1 = gsap.timeline()
-        // tl.set(`.${s.name}`, { xPercent: -50, opacity: 0})
-        // tl.to(`.${s.name}`, { xPercent: 0, duration: 2, ease: 'power1.out'}, 0.4)
-        // tl.to(`.${s.name}`, { opacity: 1, duration: 2, ease: 'none'}, '<')
+    useGSAP(() => {
 
-        // tl1.set(`.${s.pos}`, { xPercent: 100, opacity: 0})
-        // tl1.to(`.${s.pos}`, { xPercent: 0, duration: 2, ease: 'power1.out'}, 0.4)
-        // tl1.to(`.${s.pos}`, { opacity: 1, duration: 2, ease: 'none'}, '<')
-        tl.set(`.${s.name}`, { xPercent: -50, opacity: 0})
-        tl.to(`.${s.name}`, { xPercent: 0, duration: 2, ease: 'power1.out'}, 0.4)
-        tl.to(`.${s.name}`, { opacity: 1, duration: 2, ease: 'none'}, '<')
-
-        tl1.set(`.${s.pos}`, { xPercent: 100, opacity: 0})
-        tl1.to(`.${s.pos}`, { xPercent: 0, duration: 2, ease: 'power1.out'}, 0.4)
-        tl1.to(`.${s.pos}`, { opacity: 1, duration: 2, ease: 'none'}, '<')
-
-        const tlScroll = gsap.timeline()
-
-        tlScroll.to(`.${s.name}`, {
-            scrollTrigger: {
-                trigger: `.${s.name}`,
-                scrub: 1,
-                start: 'top 300px',
-            },
+        gsap.to(nameRef.current, {
             xPercent: -100,
-            duration: 1.5,
-        })
 
-        tlScroll.to(`.${s.pos}`, {
             scrollTrigger: {
-                trigger: `.${s.pos}`,
+                trigger: containerRef.current,
                 scrub: 1,
-                start: 'top 425px',
-            },
+                start: 'top top', //300
+                end: 'bottom top'
+            }
+        })
+        //`.${s.pos}`
+        gsap.to(posRef.current, {
             xPercent: 250,
-            duration: 1.5,
+            
+            scrollTrigger: {
+                trigger: containerRef.current,
+                scrub: 1,
+                start: 'top top', //425
+                end: 'bottom 100'
+            }
         })
 
-    }, {scope: container})
+    }, {scope: containerRef})
 
     return(
-        <header ref={container} id='header' className={s.main_header}>
-            <h1 className={s.name}>Vladimir Nariadov</h1>
-            <h3 className={s.pos}>Web developer</h3>
+        <header ref={containerRef} id='header' className={s.main_header}>
+            <h1 ref={nameRef} className={s.name}>Vladimir Nariadov</h1>
+            <h3 ref={posRef} className={s.pos}>Web developer</h3>
         </header>
     )
 }
