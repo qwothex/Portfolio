@@ -1,16 +1,111 @@
 
 
-.projects{
-    padding: 10px 50px;
-    padding-top: 60px;
+// .container{
 
-    h1{
-        text-align: center;
-        margin: 0;
-    }
+//     h1{
+//         text-align: center;
+//         margin: 0;
+//     }
     
-    h3{
-        text-align: center;
-        margin-top: 0;
-    }
+//     h3{
+//         text-align: center;
+//         margin-top: 0;
+//     }
+
+//     .projectsContainer{
+//         display: flex;
+//         flex-wrap: nowrap;
+//         overscroll-behavior: none;
+//         width: 300%;
+
+//         .project{
+//             width: 100vw;
+//             border: 1px solid #fff;
+//             display: flex;
+//             padding: 10px;
+//             margin-bottom: 25px;
+//             box-sizing: border-box;
+
+//             img{
+//                 height: 300px;
+//             }
+        
+//             .rightSide{
+//                 padding-left: 15px;
+//                 position: relative;
+        
+//                 h2{
+//                     margin: 0;
+//                     font-size: 36px;
+//                 }
+        
+//                 p{
+//                     margin: 0;
+//                 }
+        
+//                 button{
+//                     position: absolute;
+//                     width: 150px;
+//                     height: 40px;
+//                     border: 1px solid white;
+//                     border-radius: 8px;
+//                     background-color: transparent;
+//                     color: #fff;
+//                     right: 5px;
+//                     bottom: 5px;
+//                     z-index: 2;
+//                     cursor: pointer;
+//                     transition: 0.3s;
+        
+//                     &::before{
+//                         content: '';
+//                         display: block;
+//                         position: absolute;
+//                         height: 100%;
+//                         top: 0;
+//                         left: 0;
+//                         border-radius: 7px;
+//                         width: 0;
+//                         z-index: -1;
+//                         background-color: #fff;
+//                         transition: 0.3s;
+//                     }
+        
+//                     &:hover{
+//                         color: black;
+        
+//                         &::before{
+//                             width: 100%; 
+//                         }
+//                     }
+        
+//                 }
+//             }
+//         }
+//     }
+    
+// }
+
+@mixin project() {
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    color: white;
+    padding-left: 10px;
 }
+
+.project1 {
+    @include project;
+    left: -75%;
+  } 
+  
+  .project2{
+    @include project;
+    right: -150%;
+  }
+  
+  .project3{
+    @include project;
+    right: -150%;
+  }
